@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureDDNS", "local-server\AzureDDNS.csproj", "{78FBAC2E-06E0-4040-A78E-092E90D1368A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78FBAC2E-06E0-4040-A78E-092E90D1368A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FBAC2E-06E0-4040-A78E-092E90D1368A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FBAC2E-06E0-4040-A78E-092E90D1368A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FBAC2E-06E0-4040-A78E-092E90D1368A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15492CCF-BE59-4D13-A57E-83757F1F53B5}
+	EndGlobalSection
+EndGlobal

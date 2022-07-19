@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AzureDDNS": {
+      "commandName": "Project",
+      "commandLineArgs": "--azurewebhook=https://ddns-devopsdani.azurewebsites.net/api/HttpTrigger1 --key=2w51Qtt4sBpwJYpDOyf5o9q5K98zEaxEWbHy0QnDKPaOAzFuBvswRA== --subdomain=home --ipcheckuri=http://ipinfo.io/ip"
+    }
+  }
+}

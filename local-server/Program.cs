@@ -49,8 +49,8 @@ namespace AzureDDNS
                 var ipv4 = await httpClient.GetStringAsync(ipcheckuri);
                 if (ip is null || ipv4 != ip.Ipv4Address)
                 {
-                    var temp = new IpAddress(azure.Subdomain, ipv4);
-                    var data = new StringContent(JsonSerializer.Serialize(temp));
+                    var tempIp = new IpAddress(azure.Subdomain, ipv4);
+                    var data = new StringContent(JsonSerializer.Serialize(tempIp));
                     data.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
                     try
                     {
@@ -58,17 +58,16 @@ namespace AzureDDNS
                         Console.WriteLine(await request.Content.ReadAsStringAsync());
                         if (request.StatusCode == HttpStatusCode.OK)
                         {
-                            ip = temp;
-                            Console.WriteLine($"Successfully updated DNS record {azure.Subdomain} to {ipv4}!");
+                            ip = tempIp;
                         }
                         else
                         {
                             Console.WriteLine($"Failed to updated DNS record {azure.Subdomain} to {ipv4}! STATUS CODE: {request.StatusCode} | RESPONSE {request.Content.ReadAsStringAsync()}");
                         }
                     }
-                    catch (TimeoutException e)
+                    catch (TaskCanceledException e)
                     {
-                        Console.WriteLine($"Timeout occured while updating DNS record {azure.Subdomain} to {ipv4}! Retrying after 5 seconds...");
+                        Console.WriteLine($"Timeout occured while updating DNS record {azure.Subdomain} to {ipv4}! Retrying after 10 seconds...");
                     }
                 }
             }
